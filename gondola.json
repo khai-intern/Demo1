@@ -1,0 +1,45 @@
+{
+    "tests": "./built/**/test/Timetable_test.js",
+    "timeout": 10000,
+    "output": "./results",
+    "helpers": {
+        "Protractor": {
+            "angular": false,
+            "browser": "chrome",
+            "driver": "direct",
+            "directConnect": true,
+            "seleniumAddress": null,
+            "smartWait": 20000
+        },
+        "GondolaHelper": {
+            "require": "gondolajs/built/helper/gondolahelper"
+        }
+    },
+    "include": {},
+    "bootstrap": false,
+    "plugins": {
+        "screenshotOnFail": {
+            "enabled": true
+        }
+    },
+    "mocha": {
+        "reporterOptions": {
+            "reportDir": "results",
+            "inlineAssets": true,
+            "timestamp": "isoDateTime",
+            "reportFilename": "gondola",
+            "autoOpen": true,
+            "reportPageTitle": "Gondola Test Result"
+        }
+    },
+    "multiple": {
+        "parallel": {
+            "chunks": 2,
+            "browsers": [
+                "chrome",
+                "firefox"
+            ]
+        }
+    },
+    "name": "ts_example"
+}

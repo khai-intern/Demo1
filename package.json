@@ -1,0 +1,19 @@
+{
+    "name": "second_pom",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "prepare": "./node_modules/.bin/webdriver-manager update",
+        "compile": "./node_modules/.bin/tsc",
+        "parallel": "./node_modules/.bin/gondola run-multiple parallel --reporter mochawesome",
+        "test": "./node_modules/.bin/gondola run --steps --reporter mochawesome"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "gondolajs": "./lib/gondolajs-1.4.15.tgz",
+        "mochawesome": "^3.1.1",
+        "protractor": "^5.4.2"
+    }
+}
