@@ -239,21 +239,29 @@ TestCase("Verify...",async()=>{
     book.open();
 })
 
-TestCase("Verify...",async()=>{
+TestCase("Verify that user can access book ticket page when clicking book ticket tab",async()=>{
     let book = new bookticket();
     book.open();
     let loginpage = new LoginPage();
     loginpage.login("vexosox474@email5.net","123456789");
+    gondola.checkControlExist("//fieldset[1]");
 })
 
-TestCase("Verify...",async()=>{
+// TestCase("Verify that depart date is alway more than 2 days from now",async()=>{
+//   let book = new bookticket();
+//   book.open();
+//   let loginpage = new LoginPage();
+//   loginpage.login("vexosox474@email5.net","123456789");
+//   book.getdate();
+// })
+TestCase("Verify that user can book ticket",async()=>{
     let book = new bookticket();
     book.open();
     let loginpage = new LoginPage();
     loginpage.login("vexosox474@email5.net","123456789");
     book.gotobottom();
     book.Add("2/24/2020","Phan Thiết","Đà Nẵng","Soft bed with air conditioner","2")
-    
+    book.checktext("h1","Ticket booked successfully!");
 })
 
 TestCase("Verify...",async()=>{

@@ -28,6 +28,11 @@ export class Myticket{
             const scrollingElement = (document.scrollingElement || document.body)
             scrollingElement.scrollTop = scrollingElement.scrollHeight;
         });
-        
     }
+    @action("cancel","cancel ticket")
+    async cancel(){
+        this.clickbtn("//tr[3]//input[@value='Cancel']");
+        gondola.clickPopup("ok");
+    }
+    
 }

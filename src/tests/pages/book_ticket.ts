@@ -46,4 +46,11 @@ export class bookticket{
         gondola.select(this.amouth,stramouth);
         this.clickbtn(this.btnbook);
     }
+    // getdate = ()=>{
+    //     var y = gondola.getText("select[name='Date'] > [value='3']");
+        
+    //     console.log(y);
+    //     gondola.executeScript(function(){
+    //     })
+    // }
 }

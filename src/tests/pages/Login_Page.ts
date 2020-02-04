@@ -46,7 +46,7 @@ export class LoginPage {
         gondola.waitForElement(this.username,20);
         gondola.enter(this.username,strusername);
         gondola.enter(this.password,strpassword);
-        gondola.tap(this.btnlogin);
+        gondola.click(this.btnlogin);
     }
     open = () =>{
         gondola.maximize();

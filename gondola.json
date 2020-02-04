@@ -1,5 +1,5 @@
 {
-    "tests": "./built/**/test/Timetable_test.js",
+    "tests": "./built/**/test/Book_ticket_test.js",
     "timeout": 10000,
     "output": "./results",
     "helpers": {

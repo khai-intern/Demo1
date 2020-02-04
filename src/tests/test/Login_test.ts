@@ -2,7 +2,7 @@ import {gondola, TestCase, TestModule} from "gondolajs";
 import { LoginPage } from "../pages/Login_Page";
 
 TestModule("Login Page");
-TestCase("Login with account existing",async()=>{
+TestCase("Verify that user can login with valid email and password",async()=>{
     let loginpage = new LoginPage();
     loginpage.open();
     loginpage.login("vexosox474@email5.net","123456789");
@@ -45,5 +45,5 @@ TestCase("Check Log out tab",async()=>{
     let loginpage = new LoginPage();
     loginpage.open();
     loginpage.login("vexosox474@email5.net","123456789")
-    loginpage.checktext("strong","Welcome guest!");
+    loginpage.checktext("a[href='/Account/Logout'] > span","Log out");
 });

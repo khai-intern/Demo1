@@ -1,26 +1,26 @@
 import {gondola,page,action,locator} from "gondolajs";
 @page
 export class time_table{
-    url : string;
-    titletext : string;
-    constructor(url : string, titletext : string){
-        this.url = url;
-        this.titletext = titletext;
-    }
-    seturl(url : string){
-        this.url = url;
-    }
-    geturl(){
-        return this.url;
-    }
-    settitletext =(titletext : string)=>{
-        this.titletext = titletext;
-    }
-    gettitletext = () =>{
-        return this.titletext;
-    }
+    url : string = "http://www.railway.somee.com/Page/TrainTimeListPage.cshtml";
+    titletext : string = "Safe Railway - Train Timetable";
+    // constructor(url : string, titletext : string){
+    //     this.url = url;
+    //     this.titletext = titletext;
+    // }
+    // seturl(url : string){
+    //     this.url = url;
+    // }
+    // geturl(){
+    //     return this.url;
+    // }
+    // settitletext =(titletext : string)=>{
+    //     this.titletext = titletext;
+    // }
+    // gettitletext = () =>{
+    //     return this.titletext;
+    // }
     open = () =>{
-        gondola.navigate(this.geturl());
+        gondola.navigate(this.url);
         gondola.maximize();
     }
     clickbtn = (btn : string)=>{
@@ -30,7 +30,7 @@ export class time_table{
         gondola.checkText(strcss,strtext);
     }
     checktitletext = () =>{
-        gondola.checkWindowExist(this.gettitletext());
+        gondola.checkWindowExist(this.titletext);
     }
     gotobottom = ()=>{
         gondola.executeScript(function () {

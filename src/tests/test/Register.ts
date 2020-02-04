@@ -132,7 +132,7 @@ TestCase("Verify that user can create new account with all information",async()=
 TestCase("Verify that user can not create new account if enter valid PID more than 20 character",async()=>{
     let register = new Register();
     register.open();
-    register.registerwithacc("doyija2633@riv3r.net","123456789","123456789","12345678");
+    register.registerwithacc("doyija2633@riv3r.net","123456789","123456789","123456788888888888888");
     register.checktext(".message","There're errors in the form. Please correct the errors and try again.");
     register.checktext(".validation-error","Invalid ID length")
 })
@@ -140,7 +140,9 @@ TestCase("Verify that user can not create new account if enter valid PID more th
 TestCase("Verify that user can not create new account if user don't entering valid password.",async()=>{
     let register = new Register();
     register.open();
-    register.registerwithacc("doyija2633@riv3r.net","123456789","123456789","12345678");
+    register.inputvalid(register.email,"doyija2633@riv3r.net");
+    register.inputvalid(register.pid,"12345678");
+    register.clickbtn(register.registerbtn);
     register.checktext(".message","There're errors in the form. Please correct the errors and try again.");
     register.checktext(".validation-error","Invalid password length")
 })

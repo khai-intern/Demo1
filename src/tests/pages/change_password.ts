@@ -2,13 +2,13 @@ import {gondola,locator,page,action} from "gondolajs";
 @page
 export class changepassword{
     @locator
-    currpass = "//input[@id='currentPassword']";
+    currpass = "currentPassword";
     @locator
-    newpass = "//input[@id='newPassword']" ;
+    newpass = "newPassword" ;
     @locator
-    confirmpass = "//input[@id='confirmPassword']";
+    confirmpass = "confirmPassword";
     @locator
-    btnchange = "//input[@id='confirmPassword']"
+    btnchange = "//input[@value='Change Password']"
     // constructor(currpass : string, newpass : string, confirmpass: string){
     //     this.currpass = currpass;
     //     this.newpass = newpass;
@@ -32,16 +32,17 @@ export class changepassword{
     // getconfirmpass = ()=>{
     //     return this.currpass;
     // }
-    @action("Change passowrd","Change with valid password")
-    async changpassword(strcurr:string,strnew:string,strcon:string){
-        this.inputvalid(this.currpass,strcurr);
+    // @action("Change passowrd","Change with valid password")
+    // async
+    changpassword(strcurr:string,strnew:string,strcon:string){
+        this.inputvalid(this.currpass, strcurr);
         this.inputvalid(this.newpass,strnew);
         this.inputvalid(this.confirmpass,strcon);
         this.gotobottom();
-        this.clickbtn(this.btnchange);
+    
     }
-    clickbtn = (btn : string)=>{
-        gondola.click({xpath:btn});
+    clickbtn = ()=>{
+        gondola.click({xpath:this.btnchange});
     }
     checktext = (strcss : string, strtext : string) =>{
         gondola.checkText(strcss,strtext);

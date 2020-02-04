@@ -197,37 +197,43 @@ const buttonbook = [
       title: "//tr[24]//a[.='book ticket']"
     },
 ];
-const button = importData("../data/timtable.json");
+//const button = importData("../data/timtable.json");
 TestModule("Timetable")
 
-// TestCase("Check title text",async()=>{
-//     let timetb = new time_table("http://www.railway.somee.com/Page/TrainTimeListPage.cshtml","Safe Railway - Train Timetable");
-//     timetb.open();
-//     timetb.checktitletext();
-// })
+TestCase("Check title text",async()=>{
+    let timetb = new time_table();
+    timetb.open();
+    timetb.checktitletext();
+})
 
-TestCase("Check button check price",async()=>{
-    let timetb = new time_table("http://www.railway.somee.com/Page/TrainTimeListPage.cshtml","Safe Railway - Train Timetable");
+TestCase("Verify that timetable is dispalyed when clicking timetable tab",async()=>{
+  let timetb = new time_table();
+  timetb.open();
+  gondola.checkControlExist("//div[@class='DivTable']");
+})
+
+TestCase("Verify that user can access ticket price page when clicking check price button from train timetable",async()=>{
+    let timetb = new time_table();
    
     for(var i = 0;i<24;i++){
         timetb.open();
         timetb.gotobottom();
-        // let path = "["+i+"].title";
-        // const value = await gondola.getJSONValue(buttoncheck, path);
-        timetb.clickbtn(button[i].title);
+        let path = "["+i+"].title";
+        const value = await gondola.getJSONValue(buttoncheck, path);
+        timetb.clickbtn(value[0]);
     }
     
 })
 
-// TestCase("Check button book price",async()=>{
-//     let timetb = new time_table("http://www.railway.somee.com/Page/TrainTimeListPage.cshtml","Safe Railway - Train Timetable");
+TestCase("Verify that user can access book ticket page when clicking book ticket button from train timetable",async()=>{
+    let timetb = new time_table();
    
-//     for(var i = 0;i<24;i++){
-//         timetb.open();
-//         timetb.gotobottom();
-//         let path = "["+i+"].title";
-//         const value = await gondola.getJSONValue(buttonbook, path);
-//         timetb.clickbtn(value[0]);
-//     }
+    for(var i = 0;i<24;i++){
+        timetb.open();
+        timetb.gotobottom();
+        let path = "["+i+"].title";
+        const value = await gondola.getJSONValue(buttonbook, path);
+        timetb.clickbtn(value[0]);
+    }
     
-// })
+})
