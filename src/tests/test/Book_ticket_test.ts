@@ -247,13 +247,15 @@ TestCase("Verify that user can access book ticket page when clicking book ticket
     gondola.checkControlExist("//fieldset[1]");
 })
 
-// TestCase("Verify that depart date is alway more than 2 days from now",async()=>{
-//   let book = new bookticket();
-//   book.open();
-//   let loginpage = new LoginPage();
-//   loginpage.login("vexosox474@email5.net","123456789");
-//   book.getdate();
-// })
+TestCase("Verify that depart date is alway more than 2 days from now",async()=>{
+  let book = new bookticket();
+  book.open();
+  let loginpage = new LoginPage();
+  loginpage.login("vexosox474@email5.net","123456789");
+  book.gotobottom();
+  book.checkdate();
+  
+})
 TestCase("Verify that user can book ticket",async()=>{
     let book = new bookticket();
     book.open();

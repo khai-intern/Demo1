@@ -46,11 +46,14 @@ export class bookticket{
         gondola.select(this.amouth,stramouth);
         this.clickbtn(this.btnbook);
     }
-    // getdate = ()=>{
-    //     var y = gondola.getText("select[name='Date'] > [value='3']");
-        
-    //     console.log(y);
-    //     gondola.executeScript(function(){
-    //     })
-    // }
+    @action("","")
+    async checkdate(){
+        let value = await gondola.getText({"css":"select[name='Date'] > [value='3']"});
+        let x = value.split("/",3);
+        let date = x[1].toString();
+        let y = new Date().getDate();
+        y = y + 2;
+        let ele : string = y.toString(); 
+        gondola.checkEqual(ele,date);
+    }
 }
