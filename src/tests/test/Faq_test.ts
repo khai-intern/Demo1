@@ -1,39 +1,6 @@
-import {gondola, TestModule, TestCase} from "gondolajs";
+import {gondola, TestModule, TestCase, importData} from "gondolajs";
 import {faq} from "../pages/faq"
-const data = [
-    {
-      id: 1,
-      title: "//a[.='How to book a ticket?']"
-    },
-    {
-      id: 2,
-      title: "//a[.='Why do my tickets get expired?']",
-    },
-    {
-      id: 3,
-      title: "//a[.='How to pay for my tickets?']"
-    },
-    {
-      id: 4,
-      title: "//a[.='How many tickets can I book?']"
-    },
-    {
-      id: 5,
-      title: "//a[.="+'"'+"I don't see the filter in My Ticket page, why?"+'"'+"]"
-    },
-    {
-      id: 6,
-      title: "//a[.='I want to change the station, date, ... on my ticket, what should I do?']"
-    },
-    {
-      id: 7,
-      title: "//a[contains(.,'I want to use Opera, Safari, smart phone browsers, ... to access the website but')]"
-    },
-    {
-      id: 8,
-      title: "//a[.='I want to ask other questions.']"
-    },
-];
+import { LoginPage } from "../pages/Login_Page";
 TestModule("FAQ");
 
 TestCase("Check title text",async()=>{
@@ -46,17 +13,29 @@ TestCase("Check link ask",async()=>{
     let faqs = new faq();
     faqs.open();
     faqs.scrolltotop();
-    const value = await gondola.getJSONValue(data, "[0].title");
-    faqs.clickbtn(value[0]);
+    const ele = importData("./data/faq.json");
+    let index = 0;
+    while(index < ele.length){
+      gondola.click({css:ele[index].css});
+      index++;
+    }
 });
 TestCase("Check link create an account",async()=>{
     let faqs = new faq();
     faqs.open();
-    
-    faqs.clickbtn("//a[.='create an account']");
+    faqs.clickbtn(faqs.crbtn);
 });
-TestCase("Check link book ticket when don't login",async()=>{
+TestCase("Check link book ticket",async()=>{
     let faqs = new faq();
     faqs.open();
-    faqs.clickbtn("//a[.='Book Ticket page']");
+    
+    faqs.clickbtn(faqs.bookbtn);
+    let text = await gondola.getText({"css":"h1"});
+    if(text == "Book ticket"){
+        return true;
+    } else {
+        let login = new LoginPage();
+        login.login("vexosox474@email5.net","123456789");
+        gondola.checkText("h1","Book ticket");
+    }
 });

@@ -1,10 +1,13 @@
 import {gondola,page,locator,action} from "gondolajs";
 @page
 export class faq{
+    crbtn = "//a[.='create an account']";
+    bookbtn = "//a[.='Book Ticket page']";
     url = "http://www.railway.somee.com/Page/FAQ.cshtml#1";
     titletext = "Safe Railway - FAQ";
     open = () =>{
         gondola.navigate(this.url);
+        gondola.maximize();
     }
     clickbtn = (btn : string)=>{
         gondola.click({xpath:btn});

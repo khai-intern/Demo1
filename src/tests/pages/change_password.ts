@@ -9,6 +9,7 @@ export class changepassword{
     confirmpass = "confirmPassword";
     @locator
     btnchange = "//input[@value='Change Password']"
+    url = "http://www.railway.somee.com/Account/ChangePassword.cshtml"
     // constructor(currpass : string, newpass : string, confirmpass: string){
     //     this.currpass = currpass;
     //     this.newpass = newpass;
@@ -39,7 +40,8 @@ export class changepassword{
         this.inputvalid(this.newpass,strnew);
         this.inputvalid(this.confirmpass,strcon);
         this.gotobottom();
-    
+        this.clickbtn();
+        this.checktext(".message","Your password has been updated!")
     }
     clickbtn = ()=>{
         gondola.click({xpath:this.btnchange});
@@ -56,5 +58,9 @@ export class changepassword{
             scrollingElement.scrollTop = scrollingElement.scrollHeight;
         });
         
+    }
+    open = ()=>{
+        gondola.navigate(this.url);
+        this.gotobottom();
     }
 }

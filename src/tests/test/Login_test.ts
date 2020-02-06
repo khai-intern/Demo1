@@ -9,7 +9,6 @@ TestCase("Verify that user can login with valid email and password",async()=>{
 });
 
 TestCase("Check Registration page",async()=>{
-    //let btn : string = "//a[.='registration page']";
     let loginpage = new LoginPage();
     loginpage.open();
     loginpage.clickbtn("//a[.='registration page']");
