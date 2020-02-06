@@ -1,0 +1,98 @@
+[
+    {
+      "id": 1,
+      "xpath": "//tr[2]//a[.='Check Price']"
+    },
+    {
+      "id": 2,
+      "xpath": "//tr[3]//a[.='Check Price']"
+    },
+    {
+      "id": 3,
+      "xpath": "//tr[4]//a[.='Check Price']"
+    },
+    {
+      "id": 4,
+      "xpath": "//tr[5]//a[.='Check Price']"
+    },
+    {
+      "id": 5,
+      "xpath": "//tr[6]//a[.='Check Price']"
+    },
+    {
+      "id": 6,
+      "xpath": "//tr[8]//a[.='Check Price']"
+    },
+    {
+      "id": 7,
+      "xpath": "//tr[9]//a[.='Check Price']"
+    },
+    {
+      "id": 8,
+      "xpath": "//tr[10]//a[.='Check Price']"
+    },
+    {
+      "id": 9,
+      "xpath": "//tr[12]//a[.='Check Price']"
+    },
+    {
+      "id": 10,
+      "xpath": "//tr[13]//a[.='Check Price']"
+    },
+    {
+      "id": 11,
+      "xpath": "//tr[14]//a[.='Check Price']"
+    },
+    {
+      "id": 12,
+      "xpath": "//tr[15]//a[.='Check Price']"
+    },
+    {
+      "id": 13,
+      "xpath": "//tr[17]//a[.='Check Price']"
+    },
+    {
+      "id": 14,
+      "xpath": "//tr[18]//a[.='Check Price']"
+    },
+    {
+      "id": 15,
+      "xpath": "//tr[19]//a[.='Check Price']"
+    },
+    {
+      "id": 16,
+      "xpath": "//tr[20]//a[.='Check Price']"
+    },
+    {
+      "id": 17,
+      "xpath": "//tr[22]//a[.='Check Price']"
+    },
+    {
+      "id": 18,
+      "xpath": "//tr[23]//a[.='Check Price']"
+    },
+    {
+      "id": 19,
+      "xpath": "//tr[24]//a[.='Check Price']"
+    },
+    {
+      "id": 20,
+      "xpath": "//tr[25]//a[.='Check Price']"
+    },
+    {
+      "id": 21,
+      "xpath": "//tr[27]//a[.='Check Price']"
+    },
+    {
+      "id": 22,
+      "xpath": "//tr[28]//a[.='Check Price']"
+    },
+    {
+      "id": 23,
+      "xpath": "//tr[29]//a[.='Check Price']"
+    },
+    {
+      "id": 24,
+      "xpath": "//tr[30]//a[.='Check Price']"
+    }
+]

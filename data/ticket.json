@@ -1,0 +1,72 @@
+[
+    {
+        "date" : "2/11/2020",
+        "depart" : "Sài Gòn",
+        "arrive" :"Phan Thiết",
+        "seat" : "Hard seat",
+        "amouth" :"1"
+    },
+    {
+        "date" : "2/11/2020",
+        "depart" : "Phan Thiết",
+        "arrive" :"Sài Gòn",
+        "seat" : "Soft seat with air conditioner",
+        "amouth" :"1"
+    },
+    {
+        "date" : "2/12/2020",
+        "depart" : "Phan Thiết",
+        "arrive" :"Sài Gòn",
+        "seat" : "Soft seat with air conditioner",
+        "amouth" :"1"
+    },
+    {
+        "date" : "2/13/2020",
+        "depart" : "Phan Thiết",
+        "arrive" :"Sài Gòn",
+        "seat" : "Soft seat with air conditioner",
+        "amouth" :"1"
+    },
+    {
+        "date" : "2/14/2020",
+        "depart" : "Phan Thiết",
+        "arrive" :"Sài Gòn",
+        "seat" : "Soft seat with air conditioner",
+        "amouth" :"1"
+    },
+    {
+        "date" : "2/15/2020",
+        "depart" : "Phan Thiết",
+        "arrive" :"Sài Gòn",
+        "seat" : "Soft seat with air conditioner",
+        "amouth" :"1"
+    },
+    {
+        "date" : "2/16/2020",
+        "depart" : "Phan Thiết",
+        "arrive" :"Sài Gòn",
+        "seat" : "Soft seat with air conditioner",
+        "amouth" :"1"
+    },
+    {
+        "date" : "2/17/2020",
+        "depart" : "Phan Thiết",
+        "arrive" :"Sài Gòn",
+        "seat" : "Soft seat with air conditioner",
+        "amouth" :"1"
+    },
+    {
+        "date" : "2/18/2020",
+        "depart" : "Phan Thiết",
+        "arrive" :"Sài Gòn",
+        "seat" : "Soft seat with air conditioner",
+        "amouth" :"1"
+    },
+    {
+        "date" : "2/19/2020",
+        "depart" : "Phan Thiết",
+        "arrive" :"Sài Gòn",
+        "seat" : "Soft seat with air conditioner",
+        "amouth" :"1"
+    }
+]

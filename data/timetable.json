@@ -1,0 +1,98 @@
+[
+    {
+        "title": "//tbody[1]/tr[1]//a[.='check price']",   
+        "book": "//tbody[1]/tr[1]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[2]//a[.='check price']",
+        "book" : "//tr[2]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[3]//a[.='check price']",
+        "book" : "//tr[3]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[4]//a[.='check price']",
+        "book" : "//tr[4]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[5]//a[.='check price']",
+        "book" : "//tr[5]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[6]//a[.='check price']",
+        "book" : "//tr[6]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[7]//a[.='check price']",
+        "book" : "//tr[7]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[8]//a[.='check price']",
+        "book" : "//tr[8]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[9]//a[.='check price']",
+        "book" : "//tr[9]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[10]//a[.='check price']",
+        "book" : "//tr[10]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[11]//a[.='check price']",
+        "book" : "//tr[11]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[12]//a[.='check price']",
+        "book" : "//tr[12]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[13]//a[.='check price']",
+        "book" : "//tr[13]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[14]//a[.='check price']",
+        "book" : "//tr[14]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[15]//a[.='check price']",
+        "book" : "//tr[15]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[16]//a[.='check price']",
+        "book" : "//tr[16]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[17]//a[.='check price']",
+        "book" : "//tr[17]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[18]//a[.='check price']",
+        "book" : "//tr[18]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[19]//a[.='check price']",
+        "book" : "//tr[19]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[20]//a[.='check price']",
+        "book" : "//tr[20]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[21]//a[.='check price']",
+        "book" : "//tr[21]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[22]//a[.='check price']",
+        "book" : "//tr[22]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[23]//a[.='check price']",
+        "book" : "//tr[23]//a[.='book ticket']"
+    },
+    {
+        "title": "//tr[24]//a[.='check price']",
+        "book" : "//tr[24]//a[.='book ticket']"
+    }
+]
