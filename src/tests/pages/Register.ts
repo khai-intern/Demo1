@@ -62,6 +62,8 @@ export class Register {
     }
     open = () =>{
         gondola.navigate(this.url);
+        gondola.maximize();
+        this.gotobottom();
     }
     clickbtn = (btn : string) =>{
         gondola.click({xpath:btn});
@@ -71,5 +73,12 @@ export class Register {
     }
     inputvalid = (strid:string,strvalid:string)=>{
         gondola.enter({id: strid},strvalid);
+    }
+    gotobottom = ()=>{
+        gondola.executeScript(function () {
+            const scrollingElement = (document.scrollingElement || document.body)
+            scrollingElement.scrollTop = scrollingElement.scrollHeight;
+        });
+        
     }
 }

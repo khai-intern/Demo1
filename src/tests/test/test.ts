@@ -4,6 +4,7 @@
 // import {Register} from "../pages/Register"
 // import { time_table } from "../pages/time_table";
 // import {} from "../../../data/timetable.json";
+// import { HomePage } from "../pages/Home_Page";
 // const ele = importData("./data/timetable.json");
 // TestModule("Test");
 // TestCase("Test",async()=>{
@@ -69,4 +70,46 @@
 //   let time = new time_table();
 //   time.open();
 //   const ele = importData("./data/timetable.json");
+// })
+// TestCase("@test Test UI",async()=>{
+//     let login = new LoginPage();
+//     login.open();
+//     gondola.executeScript(function(){
+//         const ele = document.getElementById("username");
+//     })
+//     let x = await gondola.executeScript(function(){
+//         const ele = document.getElementsByTagName("input")[0];
+//         const color = window.getComputedStyle(ele,null).getPropertyValue("outline-color");
+//         return color;
+//     })
+//     login.clickbtn("//input[@id='username']");
+//     let y = await gondola.executeScript(function(){
+//         const ele = document.getElementsByTagName("input")[0];
+//         const color = window.getComputedStyle(ele,null).getPropertyValue("outline-color");
+//         return color;
+//     })
+//     console.log(x,y);
+//     // gondola.checkNotEqual(x,y);
+//     // gondola.executeScript(function(){
+//     //     var ele = document.getElementsByTagName("input")[2];
+//     //     const color = window.getComputedStyle(ele,":hover").getPropertyValue("background-color");
+//     //     console.log(color);
+//     // })
+//     // gondola.executeScript(function(){
+//     //     var ele = document.getElementsByClassName(":hover")[0];
+//     //     var color = window.getComputedStyle(ele, null).getPropertyValue("background-color");
+//     //     console.log(color);
+//     // })
+// })
+// TestCase("Check information ticket ",async()=>{
+//     let timetable = new time_table();
+//     let login = new LoginPage();
+    
+//     timetable.open();
+//     timetable.gotobottom();
+//     timetable.clickbtn("//tbody[1]/tr[1]//a[.='book ticket']");
+//     let text = await gondola.getText({"css":"h1"});
+//     if (text == "Login page"){
+//         login.login("vexosox474@email5.net","123456789");
+//     }
 // })

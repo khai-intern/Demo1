@@ -21,7 +21,6 @@ TestCase("Verify that user can access ticket price page when clicking check pric
     let index = 0;
     while(index < ele.length){
       timetb.open();
-      timetb.gotobottom();
       timetb.clickbtn(ele[index].title)
       index ++;
     }
@@ -33,7 +32,6 @@ TestCase("Verify that user can access book ticket page when clicking book ticket
     let index = 0;
     while(index < ele.length){
       timetb.open();
-      timetb.gotobottom();
       timetb.clickbtn(ele[index].book)
       index ++;
     }

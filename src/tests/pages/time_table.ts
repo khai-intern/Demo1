@@ -22,6 +22,7 @@ export class time_table{
     open = () =>{
         gondola.navigate(this.url);
         gondola.maximize();
+        this.gotobottom();
     }
     clickbtn = (btn : string)=>{
         gondola.click({xpath:btn});

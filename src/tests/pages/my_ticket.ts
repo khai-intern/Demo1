@@ -3,6 +3,7 @@ import {gondola,page,locator,action} from "gondolajs";
 export class Myticket{
     url : string = "http://www.railway.somee.com/Page/ManageTicket.cshtml";
     titletext : string= "Safe Railway - My Ticket";
+    btncc : string ="input"
     // constructor(url : string, titletext : string){
     //     this.url = url;
     //     this.titletext = titletext;
@@ -31,7 +32,7 @@ export class Myticket{
     }
     @action("cancel","cancel ticket")
     async cancel(){
-        this.clickbtn("//tr[3]//input[@value='Cancel']");
+        gondola.click({tagName:this.btncc});
         gondola.clickPopup("ok");
     }
     

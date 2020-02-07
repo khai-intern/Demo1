@@ -19,23 +19,40 @@ TestCase("Verify that user can acces my ticket when clicking my ticket tab.",asy
     myticket.checktext("a[href='/Page/ManageTicket.cshtml']","My ticket");
 })
 
-// TestCase("Verify filter...",async()=>{
-//     let myticket = new Myticket();
-//     let loginpage = new LoginPage();
+TestCase("Verify filter...",async()=>{
+    let myticket = new Myticket();
+    let loginpage = new LoginPage();
     
-//     myticket.open();
-//     loginpage.login("vexosox474@email5.net","123456789");
-//     myticket.gotobottom();
-//     gondola.wait(5);
-// })
+    myticket.open();
+    loginpage.login("vexosox474@email5.net","123456789");
+    myticket.gotobottom();
+    gondola.wait(5);
+})
 
 TestCase("Cancel ticket",async()=>{
     let myticket = new Myticket();
     let loginpage = new LoginPage();
+    let book = new bookticket();
+    const ticket = importData("./data/ticket.json");
     myticket.open();
     loginpage.login("vexosox474@email5.net","123456789");
     myticket.gotobottom();
-    myticket.cancel();
+    let x = await gondola.getElementCount("tr");
+    if(x==0){
+        book.open();
+        book.gotobottom();
+        book.Add(ticket[0].date,ticket[0].depart,ticket[0].arrive,ticket[0].seat,ticket[0].amouth);
+        myticket.open();
+        myticket.gotobottom();
+        let z = await gondola.getElementCount("tr");
+        myticket.cancel();
+        let y = await gondola.getElementCount("tr");
+        gondola.checkNotEqual(z,y);
+    }else{
+        myticket.cancel();
+        let y = await gondola.getElementCount("tr");
+        gondola.checkNotEqual(x,y);
+    }
 })
 
 TestCase("Verify filter is displayed when myticket page has 6 row or more ",async()=>{
@@ -57,7 +74,8 @@ TestCase("Verify filter is displayed when myticket page has 6 row or more ",asyn
             book.Add(ticket[index].date,ticket[index].depart,ticket[index].arrive,ticket[index].seat,ticket[index].amouth);
             index++;
         }
-        myticket.open();
     }
+    myticket.open();
+    myticket.gotobottom();
     gondola.checkControlExist("//div[@class='Filter']");
 })

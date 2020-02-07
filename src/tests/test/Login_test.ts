@@ -46,3 +46,21 @@ TestCase("Check Log out tab",async()=>{
     loginpage.login("vexosox474@email5.net","123456789")
     loginpage.checktext("a[href='/Account/Logout'] > span","Log out");
 });
+TestCase("Verify that text box is highlighted when user click on textbox",async()=>{
+    let login = new LoginPage();
+    login.open();
+    gondola.executeScript(function(){
+        const ele = document.getElementById("username");
+    })
+    let x = await gondola.executeScript(function(){
+        const ele = document.getElementsByTagName("input")[0];
+        const color = window.getComputedStyle(ele,null).getPropertyValue("outline-color");
+        return color;
+    })
+    login.clickbtn("//input[@id='username']");
+    let y = await gondola.executeScript(function(){
+        const ele = document.getElementsByTagName("input")[0];
+        const color = window.getComputedStyle(ele,null).getPropertyValue("outline-color");
+        return color;
+    })
+})
