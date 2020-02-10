@@ -113,3 +113,16 @@
 //         login.login("vexosox474@email5.net","123456789");
 //     }
 // })
+// TestCase("Test",async()=>{
+//     let login = new LoginPage();
+//     let home = new HomePage();
+//     let creat = new Register()
+//     login.open();
+//     gondola.openNewTab();
+//     creat.open();
+//     gondola.maximize();
+//     creat.inputvalid("email","%");
+//     creat.clickbtn("//input[@value='Register']");
+//     gondola.switchBrowserTab("previous");
+//     gondola.wait(5);
+// })
