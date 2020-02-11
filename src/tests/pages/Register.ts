@@ -1,6 +1,6 @@
 import {gondola,page,locator,action} from "gondolajs"
 @page
-export class Register {
+export class RegisterPage {
     url : string = "http://www.railway.somee.com/Account/Register.cshtml";
     @locator
     email = "email";
@@ -11,7 +11,7 @@ export class Register {
     @locator
     pid = "pid";
     @locator
-    registerbtn = "//input[@value='Register']";
+    registerbutton = "//input[@value='Register']";
     // constructor(url:string, email:any, password: any , confirmpass: any, pid:any){
     //     this.url = url;
     //     this.email = email;
@@ -49,36 +49,35 @@ export class Register {
     // getpid = ()=>{
     //     return this.pid;
     // }
-    clickregister = () =>{
-        gondola.click({xpath: this.registerbtn})
+    clickRegisterButton = () =>{
+        gondola.click({xpath: this.registerbutton})
     }
     @action("Register","Register with valid account")
-    async registerwithacc (stremail:string,strpass:string,strcon:string,strpid:string){
+    async registerWithAccount (stremail:string,strpass:string,strcon:string,strpid:string){
         gondola.enter({id: this.email},stremail);
         gondola.enter({id: this.password},strpass);
         gondola.enter({id: this.confirmpass},strcon);
         gondola.enter({id: this.pid},strpid);
-        this.clickregister();
+        this.clickRegisterButton();
     }
-    open = () =>{
+    openUrl = () =>{
         gondola.navigate(this.url);
         gondola.maximize();
-        this.gotobottom();
+        this.gotoBottom();
     }
-    clickbtn = (btn : string) =>{
+    clickButton = (btn : string) =>{
         gondola.click({xpath:btn});
     }
-    checktext =(strcss : string, strtext:string)=>{
+    checkText =(strcss : string, strtext:string)=>{
         gondola.checkText({css:strcss},strtext);
     }
-    inputvalid = (strid:string,strvalid:string)=>{
+    inputValid = (strid:string,strvalid:string)=>{
         gondola.enter({id: strid},strvalid);
     }
-    gotobottom = ()=>{
+    gotoBottom = ()=>{
         gondola.executeScript(function () {
             const scrollingElement = (document.scrollingElement || document.body)
             scrollingElement.scrollTop = scrollingElement.scrollHeight;
         });
-        
     }
 }

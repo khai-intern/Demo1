@@ -1,6 +1,6 @@
 import {gondola,locator,page,action} from "gondolajs";
 @page
-export class changepassword{
+export class ChangePasswordPage{
     @locator
     currpass = "currentPassword";
     @locator
@@ -8,7 +8,7 @@ export class changepassword{
     @locator
     confirmpass = "confirmPassword";
     @locator
-    btnchange = "//input[@value='Change Password']"
+    buttonchange = "//input[@value='Change Password']"
     url = "http://www.railway.somee.com/Account/ChangePassword.cshtml"
     // constructor(currpass : string, newpass : string, confirmpass: string){
     //     this.currpass = currpass;
@@ -35,32 +35,32 @@ export class changepassword{
     // }
     // @action("Change passowrd","Change with valid password")
     // async
-    changpassword(strcurr:string,strnew:string,strcon:string){
-        this.inputvalid(this.currpass, strcurr);
-        this.inputvalid(this.newpass,strnew);
-        this.inputvalid(this.confirmpass,strcon);
-        this.gotobottom();
-        this.clickbtn();
-        this.checktext(".message","Your password has been updated!")
+    changePassword(strcurr:string,strnew:string,strcon:string){
+        this.inputValid(this.currpass, strcurr);
+        this.inputValid(this.newpass,strnew);
+        this.inputValid(this.confirmpass,strcon);
+        this.gotoBottom();
+        this.clickButton();
+        this.checkText(".message","Your password has been updated!")
     }
-    clickbtn = ()=>{
-        gondola.click({xpath:this.btnchange});
+    clickButton = ()=>{
+        gondola.click({xpath:this.buttonchange});
     }
-    checktext = (strcss : string, strtext : string) =>{
+    checkText = (strcss : string, strtext : string) =>{
         gondola.checkText(strcss,strtext);
     }
-    inputvalid = (strid:string,strvalid:string)=>{
+    inputValid = (strid:string,strvalid:string)=>{
         gondola.enter({id: strid},strvalid);
     }
-    gotobottom = ()=>{
+    gotoBottom = ()=>{
         gondola.executeScript(function () {
             const scrollingElement = (document.scrollingElement || document.body)
             scrollingElement.scrollTop = scrollingElement.scrollHeight;
         });
         
     }
-    open = ()=>{
+    openUrl = ()=>{
         gondola.navigate(this.url);
-        this.gotobottom();
+        this.gotoBottom();
     }
 }

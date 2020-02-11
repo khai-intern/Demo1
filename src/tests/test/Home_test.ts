@@ -4,15 +4,15 @@ import { LoginPage } from "../pages/Login_Page";
 
 TestModule("Home Page");
 TestCase("Check window existing",async() => {
-    let homepage = new HomePage();
-    homepage.open();
-    homepage.checktitle();
+    let homePage = new HomePage();
+    homePage.openUrl();
+    homePage.checkTitle();
 });
 
 TestCase("Create an account",async()=>{
     let homepage = new HomePage();
-    homepage.open();
-    homepage.createacc();
+    homepage.openUrl();
+    homepage.checkCreatebutton();
 })
 
 

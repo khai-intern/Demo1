@@ -1,41 +1,30 @@
 import {gondola, TestModule, TestCase, importData} from "gondolajs";
-import {faq} from "../pages/faq"
+import {FaqPage} from "../pages/faq"
 import { LoginPage } from "../pages/Login_Page";
 TestModule("FAQ");
 
 TestCase("Check title text",async()=>{
-    let faqs = new faq();
-    faqs.open();
-    faqs.checktitletext();
+    let faqPage = new FaqPage();
+    faqPage.openUrl();
+    faqPage.checkTitle();
 });
 
 TestCase("Check link ask",async()=>{
-    let faqs = new faq();
-    faqs.open();
-    faqs.scrolltotop();
     const ele = importData("./data/faq.json");
-    let index = 0;
-    while(index < ele.length){
-      gondola.click({css:ele[index].css});
-      index++;
-    }
+    let faqPage = new FaqPage();
+    faqPage.openUrl();
+    faqPage.scrollTotop();
+    faqPage.checkLink(ele);
 });
 TestCase("Check link create an account",async()=>{
-    let faqs = new faq();
-    faqs.open();
-    faqs.clickbtn(faqs.crbtn);
+    let faqPage = new FaqPage();
+    faqPage.openUrl();
+    faqPage.clickButton(faqPage.createbutton);
 });
 TestCase("Check link book ticket",async()=>{
-    let faqs = new faq();
-    faqs.open();
-    
-    faqs.clickbtn(faqs.bookbtn);
-    let text = await gondola.getText({"css":"h1"});
-    if(text == "Book ticket"){
-        return true;
-    } else {
-        let login = new LoginPage();
-        login.login("vexosox474@email5.net","123456789");
-        gondola.checkText("h1","Book ticket");
-    }
+    let faqPage = new FaqPage();
+    faqPage.openUrl();
+    faqPage.clickButton(faqPage.bookbutton);
+    let text = await faqPage.getText();
+    faqPage.checkBookPage(text);
 });

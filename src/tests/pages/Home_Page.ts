@@ -7,13 +7,13 @@ export class HomePage {
     url = "http://www.railway.somee.com/Page/HomePage.cshtml";
     title = "Safe Railway - Selenium Automation"
     @action("Check","Check title home page")
-    async checktitle (){
+    async checkTitle (){
         gondola.checkWindowExist(this.title);
     }
-    open = () =>{
+    openUrl = () =>{
         gondola.navigate(this.url);
     }
-    createacc = ()=>{
+    checkCreatebutton = ()=>{
         gondola.click({xpath: this.btn});
         gondola.checkText({css: "h1"},"Create account");
     }

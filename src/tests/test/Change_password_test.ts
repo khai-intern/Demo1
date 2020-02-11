@@ -1,62 +1,60 @@
 import {gondola, TestModule, TestCase} from "gondolajs";
 import { LoginPage } from "../pages/Login_Page";
-import { changepassword } from "../pages/change_password";
+import { ChangePasswordPage } from "../pages/change_password";
 
 TestModule("Change Password");
 
 TestCase("Verify that user can change password with new password",async()=>{
-    let loginpage = new LoginPage();
-    let change = new changepassword();
-    let strpass = "123456789";
-    let strnewpass = "987654321";
-    change.open();
-    loginpage.login("vexosox474@email5.net","123456789");
-    change.open();
+    let loginPage = new LoginPage();
+    let changePage = new ChangePasswordPage();
+    let password = "123456789";
+    let newpassword = "987654321";
+    changePage.openUrl();
+    loginPage.loginWithAccount("vexosox474@email5.net","123456789");
+    changePage.openUrl();
     
-    change.changpassword(strpass,strnewpass,strnewpass);
-    change.changpassword(strnewpass,strpass,strpass);
+    changePage.changePassword(password,newpassword,newpassword);
+    changePage.changePassword(newpassword,password,password);
 })
 
 TestCase("Change password with invalid password",async()=>{
-    let loginpage = new LoginPage();
-    let change = new changepassword();
-    change.open();
-    loginpage.login("vexosox474@email5.net","123456789");
-    change.open();
+    let loginPage = new LoginPage();
+    let changePage = new ChangePasswordPage();
+    changePage.openUrl();
+    loginPage.loginWithAccount("vexosox474@email5.net","123456789");
+    changePage.openUrl();
     
     
-    change.inputvalid("currentPassword","123456789")
-    change.clickbtn();
+    changePage.inputValid("currentPassword","123456789")
+    changePage.clickButton();
     
-    change.checktext(".message","Password change failed. Please correct the errors and try again.");
-    change.checktext(".validation-error","Invalid new password.")
+    changePage.checkText(".message","Password change failed. Please correct the errors and try again.");
+    changePage.checkText(".validation-error","Invalid new password.")
     
 })
 
 TestCase("Verify that user cannot change password with wrong current password",async()=>{
-    let loginpage = new LoginPage();
-    let change = new changepassword();
-    change.open();
-    loginpage.login("vexosox474@email5.net","123456789");
-    change.open();
-    change.inputvalid("currentPassword","987654321")
-    change.inputvalid("newPassword","123456789")
-    change.inputvalid("confirmPassword","123456789")
-    change.clickbtn();
+    let loginPage = new LoginPage();
+    let changePage = new ChangePasswordPage();
+    changePage.openUrl();
+    loginPage.loginWithAccount("vexosox474@email5.net","123456789");
+    changePage.openUrl();
+    changePage.inputValid("currentPassword","987654321")
+    changePage.inputValid("newPassword","123456789")
+    changePage.inputValid("confirmPassword","123456789")
     
-    
-    change.checktext(".message","An error occurred when attempting to change the password. Maybe your current password is incorrect.");
-    
+    changePage.clickButton();
+    changePage.checkText(".message","An error occurred when attempting to change the password. Maybe your current password is incorrect.");
 })
 
 TestCase ("Verify error message is displayed when don't fill the form",async()=>{
     let loginpage = new LoginPage();
-    let change = new changepassword();
-    change.open();
-    loginpage.login("vexosox474@email5.net","123456789");
-    change.open();
-    change.clickbtn();
-    change.checktext(".message","Password change failed. Please correct the errors and try again.");
-    change.checktext(".validation-error[for='currentPassword']","Invalid current password.");
-    change.checktext(".validation-error[for='newPassword']","Invalid new password.");
+    let change = new ChangePasswordPage();
+    change.openUrl();
+    loginpage.loginWithAccount("vexosox474@email5.net","123456789");
+    change.openUrl();
+    change.clickButton();
+    change.checkText(".message","Password change failed. Please correct the errors and try again.");
+    change.checkText(".validation-error[for='currentPassword']","Invalid current password.");
+    change.checkText(".validation-error[for='newPassword']","Invalid new password.");
 })

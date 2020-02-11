@@ -1,6 +1,6 @@
 import {gondola,page,action,locator} from "gondolajs";
 @page
-export class time_table{
+export class TimeTablePage{
     url : string = "http://www.railway.somee.com/Page/TrainTimeListPage.cshtml";
     titletext : string = "Safe Railway - Train Timetable";
     // constructor(url : string, titletext : string){
@@ -19,25 +19,32 @@ export class time_table{
     // gettitletext = () =>{
     //     return this.titletext;
     // }
-    open = () =>{
+    openUrl = () =>{
         gondola.navigate(this.url);
         gondola.maximize();
-        this.gotobottom();
+        this.gotoBottom();
     }
-    clickbtn = (btn : string)=>{
+    clickButton = (btn : string)=>{
         gondola.click({xpath:btn});
     }
-    checktext = (strcss : string, strtext : string) =>{
+    checkText = (strcss : string, strtext : string) =>{
         gondola.checkText(strcss,strtext);
     }
-    checktitletext = () =>{
+    checkTitleText = () =>{
         gondola.checkWindowExist(this.titletext);
     }
-    gotobottom = ()=>{
+    gotoBottom = ()=>{
         gondola.executeScript(function () {
             const scrollingElement = (document.scrollingElement || document.body)
             scrollingElement.scrollTop = scrollingElement.scrollHeight;
         });
-        
+    }
+    clickButtons = (ele :any)=>{
+        let index = 0;
+        while(index < ele.length){
+        this.openUrl();
+        this.clickButton(ele[index].title)
+        index ++;
+        }
     }
 }

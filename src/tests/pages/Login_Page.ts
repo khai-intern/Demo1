@@ -13,7 +13,7 @@ export class LoginPage {
     @locator
     public password = "//input[@id='password']";
     @locator
-    public btnlogin = "//input[@value='login']";
+    public loginbutton = "//input[@value='login']";
     // constructor(url:string,email:string,password:string){
     //     this.url = url;
     //     this.email = email;
@@ -38,30 +38,35 @@ export class LoginPage {
     //     return this.password;
     // }
     @action("Click login button","Click button")
-    public async clickLoginbtn(){
-        gondola.click(this.btnlogin);
+    public async clickLoginbutton(){
+        gondola.click(this.loginbutton);
     }
     @action("Login","Login with existing account")
-    public async login(strusername: string, strpassword : string){
+    public async loginWithAccount(strusername: string, strpassword : string){
         gondola.waitForElement(this.username,20);
         gondola.enter(this.username,strusername);
         gondola.enter(this.password,strpassword);
-        gondola.click(this.btnlogin);
+        gondola.click(this.loginbutton);
     }
-    open = () =>{
+    openUrl = () =>{
         gondola.maximize();
         gondola.navigate(this.geturl());
 
     }
-    clickbtn = (btn : string) =>{
+    clickButton = (btn : string) =>{
         gondola.click({xpath:btn});
     }
-    checktext =(strcss : string, strtext:string)=>{
+    checkText =(strcss : string, strtext:string)=>{
         gondola.checkText({css:strcss},strtext);
     }
-    inputvalid = (strid:string,strvalid:string)=>{
+    inputValid = (strid:string,strvalid:string)=>{
         gondola.enter({id: strid},strvalid);
     }
-    
-    
+    getColorBox = ()=>{
+        gondola.executeScript(function(){
+            const ele = document.getElementsByTagName("input")[0];
+            const color = window.getComputedStyle(ele,null).getPropertyValue("outline-color");
+            return color;
+        })
+    }
 }
