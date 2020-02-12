@@ -80,4 +80,11 @@ export class RegisterPage {
             scrollingElement.scrollTop = scrollingElement.scrollHeight;
         });
     }
+    // async getColor(pseudo : string){
+    //     await gondola.executeScript(function(){
+    //         var ele = document.getElementsByTagName("input")[2];
+    //         const color2 = window.getComputedStyle(ele, pseudo).getPropertyValue("background-color");
+    //         return color2;
+    //     });
+    // }
 }

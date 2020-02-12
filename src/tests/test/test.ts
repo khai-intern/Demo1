@@ -1,12 +1,13 @@
-// import {gondola, TestModule, TestCase, importData} from "gondolajs"
-// import { bookticket } from "../pages/book_ticket";
-// import { LoginPage } from "../pages/Login_Page";
-// import {Register} from "../pages/Register"
-// import { time_table } from "../pages/time_table";
-// import {} from "../../../data/timetable.json";
-// import { HomePage } from "../pages/Home_Page";
-// const ele = importData("./data/timetable.json");
-// TestModule("Test");
+import {gondola, TestModule, TestCase, importData} from "gondolajs"
+import { BookTicketPage } from "../pages/book_ticket";
+import { LoginPage } from "../pages/Login_Page";
+import {RegisterPage} from "../pages/Register"
+import { TimeTablePage } from "../pages/time_table";
+import {} from "../../../data/timetable.json";
+import { HomePage } from "../pages/Home_Page";
+import { IErrorInfo } from "gondolajs/built/builtin";
+const ele = importData("./data/timetable.json");
+TestModule("Test");
 // TestCase("Test",async()=>{
 //     // let book = new bookticket();
 //     // book.open();
@@ -73,34 +74,36 @@
 // })
 // TestCase("@test Test UI",async()=>{
 //     let login = new LoginPage();
-//     login.open();
-//     gondola.executeScript(function(){
-//         const ele = document.getElementById("username");
-//     })
-//     let x = await gondola.executeScript(function(){
-//         const ele = document.getElementsByTagName("input")[0];
-//         const color = window.getComputedStyle(ele,null).getPropertyValue("outline-color");
-//         return color;
-//     })
-//     login.clickbtn("//input[@id='username']");
-//     let y = await gondola.executeScript(function(){
-//         const ele = document.getElementsByTagName("input")[0];
-//         const color = window.getComputedStyle(ele,null).getPropertyValue("outline-color");
-//         return color;
-//     })
-//     console.log(x,y);
-//     // gondola.checkNotEqual(x,y);
-//     // gondola.executeScript(function(){
-//     //     var ele = document.getElementsByTagName("input")[2];
-//     //     const color = window.getComputedStyle(ele,":hover").getPropertyValue("background-color");
-//     //     console.log(color);
-//     // })
-//     // gondola.executeScript(function(){
-//     //     var ele = document.getElementsByClassName(":hover")[0];
-//     //     var color = window.getComputedStyle(ele, null).getPropertyValue("background-color");
-//     //     console.log(color);
-//     // })
-// })
+//     login.openUrl();
+    // gondola.executeScript(function(){
+    //     const ele = document.getElementById("username");
+    // })
+    // let x = await gondola.executeScript(function(){
+    //     const ele = document.getElementsByTagName("input")[0];
+    //     const color = window.getComputedStyle(ele,null).getPropertyValue("outline-color");
+    //     return color;
+    // })
+    // login.clickButton("//input[@id='username']");
+    // let y = await gondola.executeScript(function(){
+    //     const ele = document.getElementsByTagName("input")[0];
+    //     const color = window.getComputedStyle(ele,null).getPropertyValue("outline-color");
+    //     return color;
+    // })
+    // console.log(x,y);
+    
+    // let x = await gondola.executeScript(function(){
+    //     var ele = document.getElementsByTagName("input")[2];
+    //     const color = window.getComputedStyle(ele,null).getPropertyValue("background-color");
+    //     console.log(color);
+    // })
+    // let y = await gondola.executeScript(function(){
+    //     var ele = document.getElementsByTagName("input")[2];
+    //     const color2 = window.getComputedStyle(ele, null).getPropertyValue("background-color");
+    //     return color2;
+    // })
+    // console.log(y);
+    //gondola.checkNotEqual(x,y);
+//})
 // TestCase("Check information ticket ",async()=>{
 //     let timetable = new time_table();
 //     let login = new LoginPage();
@@ -125,4 +128,11 @@
 //     creat.clickbtn("//input[@value='Register']");
 //     gondola.switchBrowserTab("previous");
 //     gondola.wait(5);
+// })
+// TestCase("Test",async()=>{
+//     // gondola.setErrorHandler(async(err:IErrorInfo,actor:any)=>{
+//     //     gondola.report
+    
+//     // })
+//     gondola.report("this is report");
 // })

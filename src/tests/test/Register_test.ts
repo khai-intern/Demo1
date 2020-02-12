@@ -24,19 +24,26 @@ TestCase("Verify that user can not create new account if user don't entering val
     registerPage.checkText(".message","There're errors in the form. Please correct the errors and try again.");
     registerPage.checkText(".validation-error","Invalid password length")
 })
+TestCase("Verify that Register button is highlighted when user hovering button over",async()=>{
+    let registerPage = new RegisterPage();
+    registerPage.openUrl();
+    let x  = await gondola.executeScript(function(){
+        var ele = document.getElementsByTagName("input")[4];
+        const color2 = window.getComputedStyle(ele, null).getPropertyValue("background-color");
+        return color2;
+    });
+    let y = await gondola.executeScript(function(){
+        var ele = document.getElementsByTagName("input")[4];
+        const color2 = window.getComputedStyle(ele, ":hover").getPropertyValue("background-color");
+        return color2;
+    });;
+    gondola.checkNotEqual(x,y);
+})
 
 Data(importData("./data/specialchar.json")).TestCase("Verify popup is alway display when entering email by special character.",async(current : any)=>{
     let register = new RegisterPage();
-    //const ele = importData("./data/specialchar.json");
-    let index = 0;
     register.openUrl();
-    //while(index < ele.length){
-      //register.inputvalid("email",ele[index].char);
-      register.inputValid("email",current.char);
-      
-      register.clickButton("//input[@id='password']");
-      let text = await gondola.getPopupText();
-      //gondola.refresh();
-      //index++;
-    //}
+    register.inputValid("email",current.char);
+    register.clickButton("//input[@id='password']");
+    let text = await gondola.getPopupText();
 })
